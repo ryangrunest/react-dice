@@ -4,7 +4,6 @@ import './Dice.css'
 class Dice extends Component {
 
   render() {
-    console.log(this.props)
     let isRolling = 'notRolling';
     if (this.props.isRolling === false) {
       isRolling = 'notRolling';

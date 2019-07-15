@@ -32,3 +32,6 @@
   background-color: rgb(255, 240, 153);
   box-shadow: 2px 3px 5px rgb(206, 73, 73);
 }
+.RollDice-button:focus {
+  outline: 0;
+}
