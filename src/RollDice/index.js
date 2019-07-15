@@ -38,7 +38,7 @@ class RollDice extends Component {
     setTimeout(() => {
       this.setState({isRolling1: false});
       this.setState({isRolling2: false});
-      this.setState({buttonText: 'RollDice'})
+      this.setState({buttonText: 'Roll Dice'})
     }, 1500);
   }
 
