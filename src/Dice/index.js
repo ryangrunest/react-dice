@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
+import './Dice.css'
 
 class Dice extends Component {
-  defaultProps = {
-    value : 2
-  }
 
   render() {
+    console.log(this.props)
+    let isRolling = 'notRolling';
+    if (this.props.isRolling === false) {
+      isRolling = 'notRolling';
+    } else {
+      isRolling = 'isRolling';
+    }
     return(
       <div className="Dice">
-        <i className="fas fa-dice-one"></i>
+        <div className={isRolling}>
+          <i className={this.props.value}></i>
+        </div>
       </div>
     )
   }
