@@ -31,14 +31,18 @@ class RollDice extends Component {
   };
 
   isRolling() {
-    this.setState({isRolling1: true});
-    this.setState({isRolling2: true});
-    this.setState({buttonText: 'Rolling...'})
-    console.log(this.state.isRolling1)
+    this.setState({
+      isRolling1: true,
+      isRolling2: true,
+      buttonText: 'Rolling...'
+    });
+    // console.log(this.state.isRolling1)
     setTimeout(() => {
-      this.setState({isRolling1: false});
-      this.setState({isRolling2: false});
-      this.setState({buttonText: 'Roll Dice'})
+      this.setState({
+        isRolling1: false,
+        isRolling2: false,
+        buttonText: 'Roll Dice'
+      });
     }, 1500);
   }
 
@@ -48,8 +52,9 @@ class RollDice extends Component {
     this.isRolling();
 
     setTimeout(() => {
-      this.setState({dice1: this.convertToString(newDiceRoll1)});
-      this.setState({dice2: this.convertToString(newDiceRoll2)});
+      this.setState({dice1: this.convertToString(newDiceRoll1),
+                     dice2: this.convertToString(newDiceRoll2)
+      });
     }, 1000);
   };
   
@@ -60,7 +65,7 @@ class RollDice extends Component {
           <Dice value={this.state.dice1} isRolling={this.state.isRolling1}/>
           <Dice value={this.state.dice2} isRolling={this.state.isRolling2}/>
         </div>
-        <button className="RollDice-button" onClick={() => this.rollDice()}>{this.state.buttonText}</button>
+        <button disabled={this.state.isRolling1} className="RollDice-button" onClick={() => this.rollDice()}>{this.state.buttonText}</button>
       </div>
     )
   };
